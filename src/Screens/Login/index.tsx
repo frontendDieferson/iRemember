@@ -1,8 +1,13 @@
-import React from "react";
 import styles from "./styles";
-import { Image, View, Text, TextInput, TouchableOpacity, Button } from "react-native";
+import { Image, View, Text, TextInput, TouchableOpacity, } from "react-native";
+import React from "react";
+import { useNavigation } from "@react-navigation/native";
+
+
 
 export function Login() {
+ const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Image
@@ -16,10 +21,15 @@ export function Login() {
       <View style={styles.form}>
         <TextInput style={styles.input} placeholderTextColor='#DEDEDE' placeholder="Seu Email" />
         <TextInput style={styles.input} placeholderTextColor='#DEDEDE' placeholder="Sua Senha" keyboardType="numeric" />
-        <TouchableOpacity style={styles.buttonLogin}>
+        <TouchableOpacity style={styles.buttonLogin}
+          onPress={() => {navigation.navigate('Home')}}
+        >
             <Text style={{color: '#FFF'}}>LOGIN</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonCadastrar}>
+        <TouchableOpacity
+         style={styles.buttonCadastrar} 
+         onPress={() =>{ navigation.navigate('SignUp')}}
+         >
             <Text style={{color: '#FFF'}}>CADASTRE-SE</Text>
         </TouchableOpacity>
         <TouchableOpacity>

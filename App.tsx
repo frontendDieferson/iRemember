@@ -1,12 +1,13 @@
+import { NavigationContainer } from '@react-navigation/native';
+import * as React from 'react';
 
-import { Login } from './src/Screens/Login'
+import Navigation from './src/Routes/Navigation';
 
 
 export default function App() {
   return (
-    <>
-      <Login />
-    
-    </>
+    <NavigationContainer>
+     <Navigation />
+    </NavigationContainer>
   );
 }
